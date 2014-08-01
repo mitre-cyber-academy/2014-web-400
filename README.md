@@ -11,7 +11,7 @@ Once in, the user will need to take the private key and decrypt the message loca
 
 TODO
 ====
-Lock down permissions more (currently .ssh and authorized_keys are 600 and 700 which is too high.) See [this](http://wiki.centos.org/HowTos/Network/SecuringSSH#head-b726dd17be7e9657f8cae037c6ea70c1a032ca1f) for more info on what it takes to make authorized_keys work even when permissions are lower.
-Restrict user from being able to add/remove files and stop them from seeing any dir but /home/jason
-Generate public/private key and add it to chef recipe, then encrypt a message with [this](https://www.igolder.com/pgp/encryption/) and add it to a page on the site.
-Generate and add a key.
+* Lock down permissions more (currently .ssh and authorized_keys are 600 and 700 which is too high.) See [this](http://wiki.centos.org/HowTos/Network/SecuringSSH#head-b726dd17be7e9657f8cae037c6ea70c1a032ca1f) for more info on what it takes to make authorized_keys work even when permissions are lower.
+* Restrict user from being able to add/remove files and stop them from seeing any dir but /home/jason
+* Generate public/private key and add it to chef recipe, then encrypt a message with [this](https://www.igolder.com/pgp/encryption/) and add it to a page on the site.
+* Generate and add a key.
