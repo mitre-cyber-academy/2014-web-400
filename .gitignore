@@ -1,0 +1,9 @@
+# Ignore mac specific files.
+.DS_Store
+
+# Ignore the directory vagrant uses to keep track of machine ID's
+.vagrant/
+
+# Do not commit config files.
+.config*
+
