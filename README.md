@@ -5,7 +5,7 @@ Description: Users are provided with a heartbleed vulnerable server which they m
 
 How to solve: First, the user will need to exploit the heartbleed vulnerability on the box, they can do so using [heartleech.](https://github.com/robertdavidgraham/heartleech)
 
-Next, they will need to copy the key to a file, (I called the file heartkey) and then run the command `ssh jason@host -i`pwd`/heartkey`
+Next, they will need to copy the key to a file, (I called the file heartkey) and then run the command `ssh jason@host -iheartkey`
 
 Once in, the user will need to take the private key and decrypt the message located on a page on the site.
 
