@@ -50,8 +50,17 @@ web_app "challenge-site" do
   enable true
 end
 
+package "lshell" do
+  action :install
+end
+
+cookbook_file "/etc/lshell.conf" do
+  source "lshell.conf"
+end
+
 user node["heartbleed-provisioner"]["user"] do
   home user_home
+  shell "/usr/bin/lshell"
   supports :manage_home => true
   action :create
 end
