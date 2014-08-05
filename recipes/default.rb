@@ -6,6 +6,8 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+include_recipe 'openssh::default'
+
 user_home = "/home/#{node["heartbleed-provisioner"]["user"]}"
 user_ssh_dir = "#{user_home}/.ssh"
 authorized_keys = "#{user_ssh_dir}/authorized_keys"
@@ -54,9 +56,15 @@ user node["heartbleed-provisioner"]["user"] do
   action :create
 end
 
+directory user_home do
+  mode 0500
+  user node["heartbleed-provisioner"]["user"]
+  group node["heartbleed-provisioner"]["user"]
+end
+
 directory user_ssh_dir do
   action :create
-  mode 0700
+  mode 0500
   user node["heartbleed-provisioner"]["user"]
   group node["heartbleed-provisioner"]["user"]
 end
@@ -66,12 +74,8 @@ bash "copy-private-key" do
 end
 
 file authorized_keys do
-  mode 0600
+  mode 0400
   user node["heartbleed-provisioner"]["user"]
   group node["heartbleed-provisioner"]["user"]
   action :touch
-end
-
-directory user_home do
-  mode 0444
 end
