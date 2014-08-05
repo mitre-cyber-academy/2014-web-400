@@ -88,3 +88,10 @@ file authorized_keys do
   group node["heartbleed-provisioner"]["user"]
   action :touch
 end
+
+cookbook_file "#{user_ssh_dir}/id_rsa" do
+  source "id_rsa"
+  mode 0400
+  user node["heartbleed-provisioner"]["user"]
+  group node["heartbleed-provisioner"]["user"]
+end
