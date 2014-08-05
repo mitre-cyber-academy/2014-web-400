@@ -11,7 +11,7 @@ GRAPH
     logrotate (>= 0.0.0)
     pacman (>= 0.0.0)
   apt (2.4.0)
-  freebsd (0.1.4)
+  freebsd (0.1.9)
   heartbleed-provisioner (0.1.0)
     apache2 (>= 0.0.0)
   iptables (0.13.2)
