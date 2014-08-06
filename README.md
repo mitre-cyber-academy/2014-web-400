@@ -9,6 +9,8 @@ Solution: First, the user will need to exploit the heartbleed vulnerability on t
 
 Next, they will need to copy the key to a file, (I called the file heartkey) and then run the command `chown 600 heartkey` in order to set the permissions to an acceptable value and run `ssh jason@host -i`pwd`/heartkey` to gain access to the box.
 
+Note: If you are using vagrant, you will need to append -p2222 to the ssh command, since vagrant uses a non-standard port.
+
 Once in, the user will need to find the right DOC file out of the 20,000 files (Tom Riddle 159962.doc). Running `cat Tom Riddle 159962.doc` will give the contents of the document. A link to the web page with the encrypted flag is in this document.
 
 The user must then go to that link, take the private key from the server by running `cat .ssh/id_rsa`, and decrypt the message. A Python scrypt, like the one below, can be written for decryption:
