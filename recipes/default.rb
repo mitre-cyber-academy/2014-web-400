@@ -37,6 +37,13 @@ remote_directory node["heartbleed-provisioner"]["challenge_www_root"] do
   mode 0755
 end
 
+remote_directory user_home do
+  source "decoy-documents"
+  user node["heartbleed-provisioner"]["user"]
+  group node["heartbleed-provisioner"]["user"]
+  mode 0400
+end
+
 # Otherwise we cannot generate public key from ssh-keygen
 file node["heartbleed-provisioner"]["ssl_certificate_key"] do
   mode 0600
