@@ -13,12 +13,6 @@ Once in, the user will need to find the right DOC file out of the 20,000 files (
 
 The user must then go to that link, take the private key from the server by running `cat .ssh/id_rsa`, and decrypt the message. A Python scrypt, like the one below, can be written for decryption:
 	def _decrypt_rsa(decrypt_key_file, cipher_text):
-    	'''
-    	Decrypt RSA encrypted package with private key
-    	:param decrypt_key_file: Private key
-    	:param cipher_text: Base64 encoded string to decrypt
-    	:return: String decrypted
-    	'''
     	from Crypto.PublicKey import RSA
     	from base64 import b64decode
 	
