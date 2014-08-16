@@ -1,7 +1,7 @@
 ---
 path:		.
 username:	"ubuntu"
-flavor_id:		"c1.medium"
-image_id:		"ami-da0d9eb3"
+flavor_id:		"m3.medium"
+image_id:		"ami-e50e888c"
 tags:
     Name:	web/heartbleed
